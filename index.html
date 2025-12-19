@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kemasin - Profesional Packaging Design</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #333; }
+        .bg-custom-light { background-color: #f8f9fa; }
+        .btn-black { background-color: #000; color: #fff; border-radius: 0; padding: 12px 25px; transition: 0.3s; }
+        .btn-black:hover { background-color: #333; color: #fff; }
+        .btn-outline-black { border: 2px solid #000; color: #000; border-radius: 0; font-weight: 600; }
+        
+        /* Navbar */
+        .navbar-brand { font-weight: 800; letter-spacing: -1px; font-size: 1.5rem; }
+        
+        /* Hero Section */
+        .hero-section { padding: 100px 0; background: #fff; border-bottom: 1px solid #eee; }
+
+        /* Customization Cards */
+        .option-card { border: 1px solid #e0e0e0; cursor: pointer; transition: 0.2s; border-radius: 8px; height: 100%; }
+        .option-card:hover { border-color: #000; background-color: #f9f9f9; }
+        .option-card.active { border: 2px solid #000; background-color: #f0f0f0; }
+        
+        /* Sticky Specification Card */
+        .spec-card { position: sticky; top: 100px; border: 1px solid #000; border-radius: 0; box-shadow: 10px 10px 0px #eee; }
+        
+        .preview-3d { background: #eee; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 8px; margin-bottom: 20px; border: 1px dashed #ccc; }
+        
+        footer { background: #000; color: #fff; padding: 50px 0; }
+        footer a { color: #ccc; text-decoration: none; margin: 0 10px; font-size: 1.2rem; }
+        footer a:hover { color: #fff; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
+    <div class="container">
+        <a class="navbar-brand" href="#">KEMASIN</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link px-3" href="#">Kemasan Custom</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#">Template</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#">Galeri</a></li>
+                <li class="nav-item"><a class="nav-link px-3" href="#">Harga</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">Kemasan Masa Depan <br>Untuk Brand Anda.</h1>
+        <p class="lead text-muted mb-5">Desain packaging profesional, kustomisasi penuh, dan kualitas premium dalam satu genggaman.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="#custom-section" class="btn btn-black">Buat Kemasan Custom</a>
+            <button class="btn btn-outline-black">Gunakan Template Default</button>
+        </div>
+    </div>
+</section>
+
+<section id="custom-section" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h3 class="fw-bold mb-4">Kustomisasi Kemasan Anda</h3>
+                
+                <div class="mb-5">
+                    <h5 class="fw-bold"><span class="text-muted">01.</span> Pilih Jenis Kemasan</h5>
+                    <div class="row g-2 mt-2">
+                        <div class="col-md-4"><div class="option-card p-3" onclick="updateSpec('Jenis', 'Kemasan Makanan', 500)" data-group="jenis">Kemasan Makanan</div></div>
+                        <div class="col-md-4"><div class="option-card p-3" onclick="updateSpec('Jenis', 'Kemasan Retail', 600)" data-group="jenis">Kemasan Retail</div></div>
+                        <div class="col-md-4"><div class="option-card p-3" onclick="updateSpec('Jenis', 'Shipping Box', 800)" data-group="jenis">Shipping Box</div></div>
+                        <div class="col-md-4"><div class="option-card p-3" onclick="updateSpec('Jenis', 'Box Dokumen', 700)" data-group="jenis">Box Dokumen</div></div>
+                        <div class="col-md-4"><div class="option-card p-3" onclick="updateSpec('Jenis', 'Gift Box', 1200)" data-group="jenis">Gift Box</div></div>
+                        <div class="col-md-4"><div class="option-card p-3" onclick="updateSpec('Jenis', 'Custom Box', 1500)" data-group="jenis">Custom Box</div></div>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <h5 class="fw-bold"><span class="text-muted">02.</span> Pilih Ukuran</h5>
+                    <div class="row g-2 mt-2">
+                        <div class="col-md-3"><div class="option-card p-3 text-center" onclick="updateSpec('Ukuran', 'Kecil (10x10x5)', 0)" data-group="ukuran">Kecil</div></div>
+                        <div class="col-md-3"><div class="option-card p-3 text-center" onclick="updateSpec('Ukuran', 'Sedang (20x15x10)', 500)" data-group="ukuran">Sedang</div></div>
+                        <div class="col-md-3"><div class="option-card p-3 text-center" onclick="updateSpec('Ukuran', 'Besar (30x25x15)', 1000)" data-group="ukuran">Besar</div></div>
+                        <div class="col-md-3"><div class="option-card p-3 text-center" onclick="updateSpec('Ukuran', 'Custom', 1500)" data-group="ukuran">Custom</div></div>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <h5 class="fw-bold"><span class="text-muted">03.</span> Material Bahan</h5>
+                    <div class="row g-2 mt-2">
+                        <div class="col-md-6"><div class="option-card p-3" onclick="updateSpec('Material', 'Kertas Kraft', 0)" data-group="material"><b>Kertas Kraft</b> <br><small>Ramah lingkungan</small></div></div>
+                        <div class="col-md-6"><div class="option-card p-3" onclick="updateSpec('Material', 'Ivory Premium', 300)" data-group="material"><b>Ivory Premium</b> <br><small>Hasil cetak tajam</small></div></div>
+                        <div class="col-md-6"><div class="option-card p-3" onclick="updateSpec('Material', 'Corrugated', 500)" data-group="material"><b>Corrugated</b> <br><small>Perlindungan maksimal</small></div></div>
+                        <div class="col-md-6"><div class="option-card p-3" onclick="updateSpec('Material', 'Fancy Paper', 1000)" data-group="material"><b>Fancy Paper</b> <br><small>Tekstur Unik</small></div></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h5 class="fw-bold">04. Warna</h5>
+                        <select class="form-select border-dark" onchange="updateSpec('Warna', this.value, 0)">
+                            <option value="Natural">Natural</option>
+                            <option value="Putih">Putih</option>
+                            <option value="Hitam">Hitam</option>
+                            <option value="Merah">Merah</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5 class="fw-bold">05. Finishing</h5>
+                        <select class="form-select border-dark" onchange="updateSpec('Finishing', this.value, 200)">
+                            <option value="Matte">Matte</option>
+                            <option value="Glossy">Glossy</option>
+                            <option value="Emboss">Emboss</option>
+                            <option value="UV Spot">UV Spot</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <h5 class="fw-bold"><span class="text-muted">06.</span> Jumlah Pesanan (Qty)</h5>
+                    <div class="d-flex flex-wrap gap-2 mt-2">
+                        <button class="btn btn-outline-dark" onclick="updateQty(50)">50</button>
+                        <button class="btn btn-outline-dark" onclick="updateQty(100)">100</button>
+                        <button class="btn btn-outline-dark" onclick="updateQty(500)">500</button>
+                        <button class="btn btn-outline-dark" onclick="updateQty(1000)">1000</button>
+                        <button class="btn btn-outline-dark" onclick="updateQty(5000)">5000+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card spec-card p-4">
+                    <div class="preview-3d">
+                      <img id="product-preview" src="img/contoh1.jpg" alt="Preview Kemasan" class="img-fluid" style="max-height: 100%; object-fit: contain;">
+                        <!-- <span class="text-muted">3D Preview Area</span> -->
+                    </div>
+                    <p class="text-center small text-muted mb-4">Produk sebenarnya mungkin berbeda</p>
+                    
+                    <h5 class="fw-bold border-bottom pb-2 mb-3">Spesifikasi Anda</h5>
+                    <div id="spec-list" class="small mb-4">
+                        <div class="d-flex justify-content-between"><span>Jenis:</span> <strong id="res-jenis">-</strong></div>
+                        <div class="d-flex justify-content-between"><span>Ukuran:</span> <strong id="res-ukuran">-</strong></div>
+                        <div class="d-flex justify-content-between"><span>Material:</span> <strong id="res-material">-</strong></div>
+                        <div class="d-flex justify-content-between"><span>Warna:</span> <strong id="res-warna">Natural</strong></div>
+                        <div class="d-flex justify-content-between"><span>Finishing:</span> <strong id="res-finishing">Matte</strong></div>
+                        <div class="d-flex justify-content-between"><span>Qty:</span> <strong id="res-qty">50</strong></div>
+                    </div>
+
+                    <div class="bg-light p-3 mb-3">
+                        <div class="d-flex justify-content-between"><span>Harga per unit:</span> <strong id="unit-price">Rp 0</strong></div>
+                        <div class="d-flex justify-content-between mt-2"><span>Total Harga:</span> <h4 class="fw-bold mb-0" id="total-price">Rp 0</h4></div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-black">Minta Penawaran</button>
+                        <button class="btn btn-outline-dark border-2">Simpan Desain</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container text-center">
+        <h4 class="fw-bold mb-4">KEMASIN</h4>
+        <p class="text-muted mb-4">Solusi kemasan profesional untuk bisnis Anda.</p>
+        <div class="mb-4">
+            <a href="#"><i class="bi bi-whatsapp"> 081517920665</i></a>
+            <a href="#"><i class="bi bi-instagram"> @kemasin.rasmuid</i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+        </div>
+        <p class="small text-muted">&copy; 2023 Kemasin Packaging Design. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    let config = {
+        jenis: { name: '-', price: 0 },
+        ukuran: { name: '-', price: 0 },
+        material: { name: '-', price: 0 },
+        warna: { name: 'Natural', price: 0 },
+        finishing: { name: 'Matte', price: 0 },
+        qty: 50
+    };
+
+    function updateSpec(category, value, price) {
+        // Update Objek Config
+        const catLower = category.toLowerCase();
+        config[catLower].name = value;
+        config[catLower].price = price;
+
+        // Update UI Text
+        document.getElementById('res-' + catLower).innerText = value;
+        
+        // Handle active class for visual feedback
+        if (event && event.currentTarget.classList.contains('option-card')) {
+            const group = event.currentTarget.getAttribute('data-group');
+            document.querySelectorAll(`[data-group="${group}"]`).forEach(el => el.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+
+        calculateTotal();
+    }
+
+    function updateQty(val) {
+        config.qty = val;
+        document.getElementById('res-qty').innerText = val;
+        calculateTotal();
+    }
+
+    function calculateTotal() {
+        const unitPrice = config.jenis.price + config.ukuran.price + config.material.price + config.finishing.price;
+        const total = unitPrice * config.qty;
+
+        document.getElementById('unit-price').innerText = 'Rp ' + unitPrice.toLocaleString('id-ID');
+        document.getElementById('total-price').innerText = 'Rp ' + total.toLocaleString('id-ID');
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
